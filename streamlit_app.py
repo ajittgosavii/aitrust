@@ -71,6 +71,56 @@ st.markdown("""
         margin-bottom: 0.5rem !important;
     }
     
+    /* Sidebar Navigation - Force White Text */
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+    
+    [data-testid="stSidebar"] label {
+        color: white !important;
+        font-weight: 500 !important;
+    }
+    
+    [data-testid="stSidebar"] .stRadio label {
+        color: white !important;
+        font-size: 0.95rem !important;
+    }
+    
+    [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1rem !important;
+        margin-bottom: 0.25rem !important;
+        transition: all 0.2s ease !important;
+    }
+    
+    [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:hover {
+        background: rgba(0, 102, 255, 0.2) !important;
+    }
+    
+    [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label[data-checked="true"] {
+        background: rgba(0, 102, 255, 0.3) !important;
+        border-left: 3px solid #0066FF !important;
+    }
+    
+    [data-testid="stSidebar"] p {
+        color: #94A3B8 !important;
+    }
+    
+    [data-testid="stSidebar"] .stMarkdown p {
+        color: #94A3B8 !important;
+    }
+    
+    /* Sidebar metric cards */
+    [data-testid="stSidebar"] [data-testid="stMetricValue"] {
+        color: #0066FF !important;
+    }
+    
+    [data-testid="stSidebar"] [data-testid="stMetricLabel"] {
+        color: white !important;
+    }
+    
     /* Hero Section */
     .hero-container {
         background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 212, 170, 0.1) 100%);
@@ -690,12 +740,15 @@ def simulate_detection_animation():
 with st.sidebar:
     st.markdown("""
     <div style='text-align: center; padding: 1rem 0;'>
-        <h1 style='font-size: 1.8rem; margin: 0;'>🛡️ TrustLayer AI</h1>
-        <p style='color: #64748B; font-size: 0.85rem; margin-top: 0.5rem;'>Enterprise AI Reliability Platform</p>
+        <h1 style='font-size: 1.8rem; margin: 0; color: white !important;'>🛡️ TrustLayer AI</h1>
+        <p style='color: #94A3B8 !important; font-size: 0.85rem; margin-top: 0.5rem;'>Enterprise AI Reliability Platform</p>
     </div>
     """, unsafe_allow_html=True)
     
     st.divider()
+    
+    # Custom styled navigation label
+    st.markdown("<p style='color: white !important; font-weight: 600; margin-bottom: 0.5rem;'>Navigation</p>", unsafe_allow_html=True)
     
     page = st.radio(
         "Navigation",
@@ -709,11 +762,11 @@ with st.sidebar:
     
     st.markdown("""
     <div style='padding: 1rem; background: rgba(0, 102, 255, 0.1); border-radius: 12px; border: 1px solid rgba(0, 102, 255, 0.3);'>
-        <p style='color: #0066FF; font-weight: 600; margin-bottom: 0.5rem;'>📈 Live Stats</p>
-        <p style='color: #94A3B8; font-size: 0.8rem; margin: 0;'>
-            <strong style='color: white;'>2.4M+</strong> Queries Analyzed<br>
-            <strong style='color: white;'>99.7%</strong> Uptime<br>
-            <strong style='color: white;'>&lt;85ms</strong> Avg Latency
+        <p style='color: #0066FF !important; font-weight: 600; margin-bottom: 0.5rem;'>📈 Live Stats</p>
+        <p style='color: #94A3B8 !important; font-size: 0.8rem; margin: 0;'>
+            <strong style='color: white !important;'>2.4M+</strong> Queries Analyzed<br>
+            <strong style='color: white !important;'>99.7%</strong> Uptime<br>
+            <strong style='color: white !important;'>&lt;85ms</strong> Avg Latency
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -722,9 +775,9 @@ with st.sidebar:
     
     st.markdown("""
     <div style='text-align: center; padding: 0.5rem;'>
-        <p style='color: #64748B; font-size: 0.75rem;'>
+        <p style='color: #94A3B8 !important; font-size: 0.75rem;'>
             Powered by<br>
-            <strong style='color: white;'>Infosys Incubator</strong>
+            <strong style='color: white !important;'>Infosys Incubator</strong>
         </p>
     </div>
     """, unsafe_allow_html=True)
