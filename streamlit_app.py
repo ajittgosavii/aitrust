@@ -24,32 +24,35 @@ st.set_page_config(
 )
 
 # ============================================================================
-# CUSTOM CSS - Professional Enterprise Design
+# CUSTOM CSS - Professional Light Theme Design
 # ============================================================================
 st.markdown("""
 <style>
     /* Import Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
     
-    /* Root Variables */
+    /* Root Variables - Light Theme */
     :root {
         --primary: #0066FF;
         --primary-dark: #0052CC;
-        --secondary: #00D4AA;
-        --danger: #FF4757;
-        --warning: #FFA502;
-        --success: #2ED573;
-        --dark: #1A1D29;
-        --darker: #12141C;
+        --primary-light: #E8F4FD;
+        --secondary: #00B894;
+        --danger: #E74C3C;
+        --warning: #F39C12;
+        --success: #27AE60;
+        --dark: #1E293B;
+        --darker: #0F172A;
         --light: #F8FAFC;
+        --lighter: #FFFFFF;
         --gray: #64748B;
-        --card-bg: rgba(255, 255, 255, 0.03);
-        --border: rgba(255, 255, 255, 0.08);
+        --gray-light: #94A3B8;
+        --card-bg: #FFFFFF;
+        --border: #E2E8F0;
     }
     
     /* Global Styles */
     .stApp {
-        background: linear-gradient(135deg, #0F1117 0%, #1A1D29 50%, #0F1117 100%);
+        background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
     
@@ -58,37 +61,36 @@ st.markdown("""
     footer {visibility: hidden;}
     header {visibility: hidden;}
     
-    /* Sidebar Styling */
+    /* Sidebar Styling - Light Theme */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #12141C 0%, #1A1D29 100%);
-        border-right: 1px solid var(--border);
+        background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        border-right: 1px solid #E2E8F0;
+    }
+    
+    [data-testid="stSidebar"] * {
+        color: #1E293B !important;
     }
     
     [data-testid="stSidebar"] .stMarkdown h1 {
-        color: white !important;
+        color: #1E293B !important;
         font-size: 1.5rem !important;
         font-weight: 700 !important;
         margin-bottom: 0.5rem !important;
     }
     
-    /* Sidebar Navigation - Force White Text */
-    [data-testid="stSidebar"] * {
-        color: white !important;
-    }
-    
     [data-testid="stSidebar"] label {
-        color: white !important;
+        color: #1E293B !important;
         font-weight: 500 !important;
     }
     
     [data-testid="stSidebar"] .stRadio label {
-        color: white !important;
+        color: #1E293B !important;
         font-size: 0.95rem !important;
     }
     
     [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
-        color: white !important;
-        background: rgba(255, 255, 255, 0.05) !important;
+        color: #1E293B !important;
+        background: #F1F5F9 !important;
         border-radius: 8px !important;
         padding: 0.5rem 1rem !important;
         margin-bottom: 0.25rem !important;
@@ -96,40 +98,32 @@ st.markdown("""
     }
     
     [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label:hover {
-        background: rgba(0, 102, 255, 0.2) !important;
+        background: #E0E7FF !important;
     }
     
     [data-testid="stSidebar"] .stRadio div[role="radiogroup"] label[data-checked="true"] {
-        background: rgba(0, 102, 255, 0.3) !important;
+        background: #DBEAFE !important;
         border-left: 3px solid #0066FF !important;
     }
     
     [data-testid="stSidebar"] p {
-        color: #94A3B8 !important;
+        color: #64748B !important;
     }
     
     [data-testid="stSidebar"] .stMarkdown p {
-        color: #94A3B8 !important;
+        color: #64748B !important;
     }
     
-    /* Sidebar metric cards */
-    [data-testid="stSidebar"] [data-testid="stMetricValue"] {
-        color: #0066FF !important;
-    }
-    
-    [data-testid="stSidebar"] [data-testid="stMetricLabel"] {
-        color: white !important;
-    }
-    
-    /* Hero Section */
+    /* Hero Section - Light Theme */
     .hero-container {
-        background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 212, 170, 0.1) 100%);
-        border: 1px solid rgba(0, 102, 255, 0.3);
+        background: linear-gradient(135deg, #FFFFFF 0%, #EEF2FF 100%);
+        border: 1px solid #E2E8F0;
         border-radius: 20px;
         padding: 3rem;
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
     
     .hero-container::before {
@@ -139,7 +133,7 @@ st.markdown("""
         right: -50%;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
         animation: pulse 4s ease-in-out infinite;
     }
     
@@ -151,7 +145,7 @@ st.markdown("""
     .hero-title {
         font-size: 3rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #FFFFFF 0%, #00D4AA 100%);
+        background: linear-gradient(135deg, #0066FF 0%, #00B894 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 1rem;
@@ -161,83 +155,86 @@ st.markdown("""
     
     .hero-subtitle {
         font-size: 1.25rem;
-        color: #94A3B8;
+        color: #64748B;
         max-width: 600px;
         position: relative;
         z-index: 1;
     }
     
-    /* Metric Cards */
+    /* Metric Cards - Light Theme */
     .metric-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-        border: 1px solid var(--border);
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
         border-radius: 16px;
         padding: 1.5rem;
         text-align: center;
         transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
     
     .metric-card:hover {
         transform: translateY(-4px);
-        border-color: var(--primary);
+        border-color: #0066FF;
         box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
     }
     
     .metric-value {
         font-size: 2.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #0066FF 0%, #00D4AA 100%);
+        background: linear-gradient(135deg, #0066FF 0%, #00B894 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     
     .metric-label {
-        color: #94A3B8;
+        color: #64748B;
         font-size: 0.9rem;
         font-weight: 500;
         margin-top: 0.5rem;
     }
     
-    /* Detection Result Cards */
+    /* Detection Result Cards - Light Theme */
     .detection-safe {
-        background: linear-gradient(135deg, rgba(46, 213, 115, 0.15) 0%, rgba(46, 213, 115, 0.05) 100%);
-        border: 1px solid rgba(46, 213, 115, 0.4);
+        background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+        border: 1px solid #A7F3D0;
         border-radius: 16px;
         padding: 1.5rem;
     }
     
     .detection-warning {
-        background: linear-gradient(135deg, rgba(255, 165, 2, 0.15) 0%, rgba(255, 165, 2, 0.05) 100%);
-        border: 1px solid rgba(255, 165, 2, 0.4);
+        background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+        border: 1px solid #FCD34D;
         border-radius: 16px;
         padding: 1.5rem;
     }
     
     .detection-danger {
-        background: linear-gradient(135deg, rgba(255, 71, 87, 0.15) 0%, rgba(255, 71, 87, 0.05) 100%);
-        border: 1px solid rgba(255, 71, 87, 0.4);
+        background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%);
+        border: 1px solid #FCA5A5;
         border-radius: 16px;
         padding: 1.5rem;
     }
     
     /* Confidence Gauge */
-    .confidence-high { color: #2ED573; }
-    .confidence-medium { color: #FFA502; }
-    .confidence-low { color: #FF4757; }
+    .confidence-high { color: #27AE60; }
+    .confidence-medium { color: #F39C12; }
+    .confidence-low { color: #E74C3C; }
     
-    /* Feature Cards */
+    /* Feature Cards - Light Theme */
     .feature-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-        border: 1px solid var(--border);
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
         border-radius: 16px;
         padding: 2rem;
         height: 100%;
         transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
     
     .feature-card:hover {
-        border-color: var(--secondary);
+        border-color: #00B894;
         transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
     
     .feature-icon {
@@ -248,30 +245,30 @@ st.markdown("""
     .feature-title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: white;
+        color: #1E293B;
         margin-bottom: 0.5rem;
     }
     
     .feature-desc {
-        color: #94A3B8;
+        color: #64748B;
         font-size: 0.9rem;
         line-height: 1.6;
     }
     
-    /* Analysis Box */
+    /* Analysis Box - Light Theme */
     .analysis-box {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid var(--border);
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
         border-radius: 12px;
         padding: 1rem;
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.85rem;
     }
     
-    /* Status Badges */
+    /* Status Badges - Light Theme */
     .badge-safe {
-        background: rgba(46, 213, 115, 0.2);
-        color: #2ED573;
+        background: #D1FAE5;
+        color: #065F46;
         padding: 0.25rem 0.75rem;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -279,8 +276,8 @@ st.markdown("""
     }
     
     .badge-warning {
-        background: rgba(255, 165, 2, 0.2);
-        color: #FFA502;
+        background: #FEF3C7;
+        color: #92400E;
         padding: 0.25rem 0.75rem;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -288,25 +285,25 @@ st.markdown("""
     }
     
     .badge-danger {
-        background: rgba(255, 71, 87, 0.2);
-        color: #FF4757;
+        background: #FECACA;
+        color: #991B1B;
         padding: 0.25rem 0.75rem;
         border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 600;
     }
     
-    /* Tab Styling */
+    /* Tab Styling - Light Theme */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
         background: transparent;
     }
     
     .stTabs [data-baseweb="tab"] {
-        background: rgba(255, 255, 255, 0.05);
+        background: #F1F5F9;
         border-radius: 8px;
         padding: 0.75rem 1.5rem;
-        color: #94A3B8;
+        color: #64748B;
         font-weight: 500;
     }
     
@@ -315,24 +312,24 @@ st.markdown("""
         color: white !important;
     }
     
-    /* Input Styling */
+    /* Input Styling - Light Theme */
     .stTextArea textarea {
-        background: rgba(0, 0, 0, 0.3) !important;
-        border: 1px solid var(--border) !important;
+        background: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
         border-radius: 12px !important;
-        color: white !important;
+        color: #1E293B !important;
         font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
     
     .stTextArea textarea:focus {
-        border-color: var(--primary) !important;
+        border-color: #0066FF !important;
         box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2) !important;
     }
     
     /* Button Styling */
     .stButton > button {
         background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-        color: white;
+        color: #1E293B;
         border: none;
         border-radius: 10px;
         padding: 0.75rem 2rem;
@@ -346,47 +343,47 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
     }
     
-    /* Select Box */
+    /* Select Box - Light Theme */
     .stSelectbox > div > div {
-        background: rgba(0, 0, 0, 0.3) !important;
-        border: 1px solid var(--border) !important;
+        background: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
         border-radius: 10px !important;
     }
     
-    /* Expander */
+    /* Expander - Light Theme */
     .streamlit-expanderHeader {
-        background: rgba(255, 255, 255, 0.05) !important;
+        background: #F8FAFC !important;
         border-radius: 10px !important;
     }
     
     /* Progress Bar */
     .stProgress > div > div {
-        background: linear-gradient(90deg, #0066FF 0%, #00D4AA 100%);
+        background: linear-gradient(90deg, #0066FF 0%, #00B894 100%);
     }
     
     /* Divider */
     hr {
-        border-color: var(--border);
+        border-color: #475569;
         margin: 2rem 0;
     }
     
-    /* Scrollbar */
+    /* Scrollbar - Light Theme */
     ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
     }
     
     ::-webkit-scrollbar-track {
-        background: var(--darker);
+        background: #F1F5F9;
     }
     
     ::-webkit-scrollbar-thumb {
-        background: var(--gray);
+        background: #CBD5E1;
         border-radius: 4px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-        background: var(--primary);
+        background: #0066FF;
     }
     
     /* Animations */
@@ -399,23 +396,23 @@ st.markdown("""
         animation: fadeIn 0.5s ease-out forwards;
     }
     
-    /* Code Block */
+    /* Code Block - Light Theme */
     code {
-        background: rgba(0, 102, 255, 0.1) !important;
-        color: #00D4AA !important;
+        background: #EEF2FF !important;
+        color: #0066FF !important;
         padding: 0.2rem 0.5rem !important;
         border-radius: 4px !important;
     }
     
-    /* Audit Trail Table */
+    /* Audit Trail Table - Light Theme */
     .audit-table {
         width: 100%;
         border-collapse: collapse;
     }
     
     .audit-table th {
-        background: rgba(0, 102, 255, 0.2);
-        color: white;
+        background: #EEF2FF;
+        color: #1E293B;
         padding: 1rem;
         text-align: left;
         font-weight: 600;
@@ -423,12 +420,42 @@ st.markdown("""
     
     .audit-table td {
         padding: 1rem;
-        border-bottom: 1px solid var(--border);
-        color: #E2E8F0;
+        border-bottom: 1px solid #E2E8F0;
+        color: #475569;
     }
     
     .audit-table tr:hover {
-        background: rgba(255, 255, 255, 0.02);
+        background: #F8FAFC;
+    }
+    
+    /* Integration Items - Light Theme */
+    .integration-item {
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .integration-item:hover {
+        border-color: #0066FF;
+        box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+    }
+    
+    /* Step indicators */
+    .step-number {
+        background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+        color: #1E293B;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        margin: 0 auto 0.75rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -740,15 +767,15 @@ def simulate_detection_animation():
 with st.sidebar:
     st.markdown("""
     <div style='text-align: center; padding: 1rem 0;'>
-        <h1 style='font-size: 1.8rem; margin: 0; color: white !important;'>🛡️ TrustLayer AI</h1>
-        <p style='color: #94A3B8 !important; font-size: 0.85rem; margin-top: 0.5rem;'>Enterprise AI Reliability Platform</p>
+        <h1 style='font-size: 1.8rem; margin: 0; color: #1E293B !important;'>🛡️ TrustLayer AI</h1>
+        <p style='color: #64748B !important; font-size: 0.85rem; margin-top: 0.5rem;'>Enterprise AI Reliability Platform</p>
     </div>
     """, unsafe_allow_html=True)
     
     st.divider()
     
     # Custom styled navigation label
-    st.markdown("<p style='color: white !important; font-weight: 600; margin-bottom: 0.5rem;'>Navigation</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color: #1E293B !important; font-weight: 600; margin-bottom: 0.5rem;'>Navigation</p>", unsafe_allow_html=True)
     
     page = st.radio(
         "Navigation",
@@ -761,12 +788,12 @@ with st.sidebar:
     st.divider()
     
     st.markdown("""
-    <div style='padding: 1rem; background: rgba(0, 102, 255, 0.1); border-radius: 12px; border: 1px solid rgba(0, 102, 255, 0.3);'>
+    <div style='padding: 1rem; background: #EEF2FF; border-radius: 12px; border: 1px solid #C7D2FE;'>
         <p style='color: #0066FF !important; font-weight: 600; margin-bottom: 0.5rem;'>📈 Live Stats</p>
-        <p style='color: #94A3B8 !important; font-size: 0.8rem; margin: 0;'>
-            <strong style='color: white !important;'>2.4M+</strong> Queries Analyzed<br>
-            <strong style='color: white !important;'>99.7%</strong> Uptime<br>
-            <strong style='color: white !important;'>&lt;85ms</strong> Avg Latency
+        <p style='color: #64748B !important; font-size: 0.8rem; margin: 0;'>
+            <strong style='color: #1E293B !important;'>2.4M+</strong> Queries Analyzed<br>
+            <strong style='color: #1E293B !important;'>99.7%</strong> Uptime<br>
+            <strong style='color: #1E293B !important;'>&lt;85ms</strong> Avg Latency
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -775,9 +802,9 @@ with st.sidebar:
     
     st.markdown("""
     <div style='text-align: center; padding: 0.5rem;'>
-        <p style='color: #94A3B8 !important; font-size: 0.75rem;'>
+        <p style='color: #64748B !important; font-size: 0.75rem;'>
             Powered by<br>
-            <strong style='color: white !important;'>Infosys Incubator</strong>
+            <strong style='color: #0066FF !important;'>Infosys Incubator</strong>
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -963,7 +990,7 @@ if page == "🏠 Executive Overview":
 elif page == "🔍 Live Detection Demo":
     st.markdown("""
     <div class='hero-container' style='padding: 2rem;'>
-        <h1 style='font-size: 2rem; color: white; margin-bottom: 0.5rem;'>🔍 Live Hallucination Detection</h1>
+        <h1 style='font-size: 2rem; color: #1E293B; margin-bottom: 0.5rem;'>🔍 Live Hallucination Detection</h1>
         <p style='color: #94A3B8;'>Watch TrustLayer AI analyze AI responses in real-time and identify hallucinations</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1018,7 +1045,7 @@ elif page == "🔍 Live Detection Demo":
             st.markdown(f"""
             <div class='detection-danger'>
                 <p style='color: #FF4757; font-weight: 700; margin-bottom: 0.5rem;'>⚠️ RECOMMENDATION</p>
-                <p style='color: #E2E8F0; font-size: 0.9rem;'>{demo_data["recommendation"]}</p>
+                <p style='color: #475569; font-size: 0.9rem;'>{demo_data["recommendation"]}</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1033,8 +1060,8 @@ elif page == "🔍 Live Detection Demo":
                 <div style='background: rgba(255,255,255,0.03); border-left: 4px solid {severity_color}; 
                             padding: 1rem; margin-bottom: 0.75rem; border-radius: 0 8px 8px 0;'>
                     <div style='display: flex; justify-content: space-between; align-items: center;'>
-                        <span style='color: white; font-weight: 600;'>{issue["type"]}</span>
-                        <span style='background: {severity_color}; color: white; padding: 0.2rem 0.6rem; 
+                        <span style='color: #1E293B; font-weight: 600;'>{issue["type"]}</span>
+                        <span style='background: {severity_color}; color: #1E293B; padding: 0.2rem 0.6rem; 
                                     border-radius: 4px; font-size: 0.7rem; font-weight: 600;'>{severity_badge}</span>
                     </div>
                     <p style='color: #FFA502; font-family: JetBrains Mono; font-size: 0.85rem; 
@@ -1056,7 +1083,7 @@ elif page == "🔍 Live Detection Demo":
             <div class='detection-danger' style='text-align: center;'>
                 <p style='font-size: 2rem; margin-bottom: 0.5rem;'>🚫</p>
                 <p style='color: #FF4757; font-weight: 700;'>BLOCKED</p>
-                <p style='color: #E2E8F0; font-size: 0.85rem;'>Response intercepted before reaching user</p>
+                <p style='color: #475569; font-size: 0.85rem;'>Response intercepted before reaching user</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1065,7 +1092,7 @@ elif page == "🔍 Live Detection Demo":
             <div class='detection-warning' style='text-align: center;'>
                 <p style='font-size: 2rem; margin-bottom: 0.5rem;'>👤</p>
                 <p style='color: #FFA502; font-weight: 700;'>HUMAN ROUTING</p>
-                <p style='color: #E2E8F0; font-size: 0.85rem;'>Query sent to domain expert for response</p>
+                <p style='color: #475569; font-size: 0.85rem;'>Query sent to domain expert for response</p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1074,7 +1101,7 @@ elif page == "🔍 Live Detection Demo":
             <div class='detection-safe' style='text-align: center;'>
                 <p style='font-size: 2rem; margin-bottom: 0.5rem;'>📝</p>
                 <p style='color: #2ED573; font-weight: 700;'>AUDIT LOGGED</p>
-                <p style='color: #E2E8F0; font-size: 0.85rem;'>Complete record for compliance documentation</p>
+                <p style='color: #475569; font-size: 0.85rem;'>Complete record for compliance documentation</p>
             </div>
             """, unsafe_allow_html=True)
 
@@ -1085,7 +1112,7 @@ elif page == "🔍 Live Detection Demo":
 elif page == "📊 Confidence Scoring":
     st.markdown("""
     <div class='hero-container' style='padding: 2rem;'>
-        <h1 style='font-size: 2rem; color: white; margin-bottom: 0.5rem;'>📊 Confidence Scoring System</h1>
+        <h1 style='font-size: 2rem; color: #1E293B; margin-bottom: 0.5rem;'>📊 Confidence Scoring System</h1>
         <p style='color: #94A3B8;'>Quantified trust for every AI response - enabling risk-based decision making</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1097,7 +1124,7 @@ elif page == "📊 Confidence Scoring":
         st.markdown("""
         <div class='detection-safe'>
             <h3 style='color: #2ED573; margin-bottom: 1rem;'>70-100: RELIABLE</h3>
-            <ul style='color: #E2E8F0; font-size: 0.9rem;'>
+            <ul style='color: #475569; font-size: 0.9rem;'>
                 <li>Claims verified against sources</li>
                 <li>No contradictions detected</li>
                 <li>High semantic consistency</li>
@@ -1110,7 +1137,7 @@ elif page == "📊 Confidence Scoring":
         st.markdown("""
         <div class='detection-warning'>
             <h3 style='color: #FFA502; margin-bottom: 1rem;'>40-69: UNCERTAIN</h3>
-            <ul style='color: #E2E8F0; font-size: 0.9rem;'>
+            <ul style='color: #475569; font-size: 0.9rem;'>
                 <li>Some claims unverifiable</li>
                 <li>Minor inconsistencies</li>
                 <li>Limited source grounding</li>
@@ -1123,7 +1150,7 @@ elif page == "📊 Confidence Scoring":
         st.markdown("""
         <div class='detection-danger'>
             <h3 style='color: #FF4757; margin-bottom: 1rem;'>0-39: UNRELIABLE</h3>
-            <ul style='color: #E2E8F0; font-size: 0.9rem;'>
+            <ul style='color: #475569; font-size: 0.9rem;'>
                 <li>Multiple fabrications detected</li>
                 <li>Citations don't exist</li>
                 <li>High semantic entropy</li>
@@ -1178,10 +1205,10 @@ elif page == "📊 Confidence Scoring":
             <div style='display: flex; justify-content: space-between; align-items: center; 
                         padding: 0.75rem; background: rgba(255,255,255,0.03); 
                         border-radius: 8px; margin-bottom: 0.5rem;'>
-                <span style='color: #E2E8F0;'>{item["query"]}</span>
+                <span style='color: #475569;'>{item["query"]}</span>
                 <div>
                     <span style='color: {color}; font-weight: 700; margin-right: 1rem;'>{item["score"]}%</span>
-                    <span style='background: {color}; color: white; padding: 0.2rem 0.6rem; 
+                    <span style='background: {color}; color: #1E293B; padding: 0.2rem 0.6rem; 
                                 border-radius: 4px; font-size: 0.75rem;'>{badge}</span>
                 </div>
             </div>
@@ -1210,7 +1237,7 @@ elif page == "📊 Confidence Scoring":
 elif page == "🏭 Industry Solutions":
     st.markdown("""
     <div class='hero-container' style='padding: 2rem;'>
-        <h1 style='font-size: 2rem; color: white; margin-bottom: 0.5rem;'>🏭 Industry-Specific Modules</h1>
+        <h1 style='font-size: 2rem; color: #1E293B; margin-bottom: 0.5rem;'>🏭 Industry-Specific Modules</h1>
         <p style='color: #94A3B8;'>Specialized detection for regulated industries where generic approaches fail</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1386,7 +1413,7 @@ elif page == "🏭 Industry Solutions":
 elif page == "📋 Compliance & Governance":
     st.markdown("""
     <div class='hero-container' style='padding: 2rem;'>
-        <h1 style='font-size: 2rem; color: white; margin-bottom: 0.5rem;'>📋 Governance & Compliance</h1>
+        <h1 style='font-size: 2rem; color: #1E293B; margin-bottom: 0.5rem;'>📋 Governance & Compliance</h1>
         <p style='color: #94A3B8;'>Complete audit trails, regulatory documentation, and board-ready reporting</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1409,7 +1436,7 @@ elif page == "📋 Compliance & Governance":
             st.markdown(f"""
             <div class='metric-card'>
                 <div style='color: {color}; font-size: 2rem; font-weight: 800;'>{score}%</div>
-                <div style='color: white; font-weight: 600; margin: 0.5rem 0;'>{name}</div>
+                <div style='color: #1E293B; font-weight: 600; margin: 0.5rem 0;'>{name}</div>
                 <div style='color: #64748B; font-size: 0.8rem;'>{status}</div>
             </div>
             """, unsafe_allow_html=True)
@@ -1479,7 +1506,7 @@ elif page == "📋 Compliance & Governance":
             <div style='display: flex; justify-content: space-between; align-items: center; 
                         padding: 0.75rem; background: rgba(255,255,255,0.03); 
                         border-radius: 8px; margin-bottom: 0.5rem;'>
-                <span style='color: #E2E8F0;'>📄 {doc}</span>
+                <span style='color: #475569;'>📄 {doc}</span>
                 <div>
                     <span class='badge-safe'>{status}</span>
                     <span style='color: #64748B; margin-left: 0.5rem; font-size: 0.8rem;'>{fmt}</span>
@@ -1505,7 +1532,7 @@ elif page == "📋 Compliance & Governance":
                         border-radius: 8px; margin-bottom: 0.5rem;'>
                 <span style='color: #94A3B8;'>{metric}</span>
                 <div>
-                    <span style='color: white; font-weight: 700;'>{value}</span>
+                    <span style='color: #1E293B; font-weight: 700;'>{value}</span>
                     <span style='color: #00D4AA; margin-left: 0.5rem; font-size: 0.8rem;'>{trend}</span>
                 </div>
             </div>
@@ -1518,7 +1545,7 @@ elif page == "📋 Compliance & Governance":
 elif page == "💰 ROI Calculator":
     st.markdown("""
     <div class='hero-container' style='padding: 2rem;'>
-        <h1 style='font-size: 2rem; color: white; margin-bottom: 0.5rem;'>💰 ROI Calculator</h1>
+        <h1 style='font-size: 2rem; color: #1E293B; margin-bottom: 0.5rem;'>💰 ROI Calculator</h1>
         <p style='color: #94A3B8;'>Calculate the business value of preventing AI hallucinations</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1585,7 +1612,7 @@ elif page == "💰 ROI Calculator":
         st.markdown(f"""
         <div class='detection-safe'>
             <div style='color: #2ED573; font-weight: 700; margin-bottom: 0.5rem;'>📊 Annual Impact Summary</div>
-            <div style='color: #E2E8F0; font-size: 0.9rem;'>
+            <div style='color: #475569; font-size: 0.9rem;'>
                 <strong>{int(total_prevented):,}</strong> critical incidents prevented<br>
                 <strong>${total_prevented * cost_per_incident:,.0f}</strong> in gross savings<br>
                 <strong>${platform_cost * 12:,.0f}</strong> platform investment<br>
@@ -1601,7 +1628,7 @@ elif page == "💰 ROI Calculator":
 elif page == "📖 API Documentation":
     st.markdown("""
     <div class='hero-container' style='padding: 1.5rem;'>
-        <h1 style='font-size: 1.75rem; color: white; margin-bottom: 0.5rem;'>📖 API Documentation</h1>
+        <h1 style='font-size: 1.75rem; color: #1E293B; margin-bottom: 0.5rem;'>📖 API Documentation</h1>
         <p style='color: #94A3B8; font-size: 0.95rem;'>Integration guides and API reference</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1677,7 +1704,7 @@ Headers:
         st.markdown(f"""
         <div style='display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0; 
                     border-bottom: 1px solid rgba(255,255,255,0.05);'>
-            <span style='background: {method_color.get(method, "#64748B")}; color: white; 
+            <span style='background: {method_color.get(method, "#64748B")}; color: #1E293B; 
                         padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; 
                         font-weight: 600; min-width: 50px; text-align: center;'>{method}</span>
             <code style='color: #00D4AA;'>{path}</code>
@@ -1739,10 +1766,10 @@ Headers:
             status_color = "#2ED573" if status == "GA" else "#FFA502"
             st.markdown(f"""
             <div class='integration-item'>
-                <div style='color: white; font-weight: 600;'>{lang}</div>
+                <div style='color: #1E293B; font-weight: 600;'>{lang}</div>
                 <code style='font-size: 0.7rem;'>{install}</code>
                 <div style='margin-top: 0.5rem;'>
-                    <span style='background: {status_color}; color: white; padding: 0.1rem 0.4rem; 
+                    <span style='background: {status_color}; color: #1E293B; padding: 0.1rem 0.4rem; 
                                 border-radius: 4px; font-size: 0.65rem;'>{status}</span>
                 </div>
             </div>
@@ -1754,9 +1781,9 @@ Headers:
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown("""
-<div style='text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.1);'>
+<div style='text-align: center; padding: 2rem; border-top: 1px solid #E2E8F0;'>
     <p style='color: #64748B; font-size: 0.85rem;'>
-        🛡️ <strong style='color: white;'>TrustLayer AI</strong> - Enterprise AI Reliability Platform<br>
+        🛡️ <strong style='color: #1E293B;'>TrustLayer AI</strong> - Enterprise AI Reliability Platform<br>
         <span style='font-size: 0.75rem;'>Production Demo v2.0 | Built for <strong style='color: #0066FF;'>Infosys Incubator</strong></span>
     </p>
     <p style='color: #64748B; font-size: 0.7rem; margin-top: 0.5rem;'>
